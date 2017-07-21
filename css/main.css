@@ -1,0 +1,16 @@
+#clicker {
+	width: 50vw;
+	height: 50vh;
+	position: fixed;
+	top: 25vh;
+	left: 25vw;
+}
+
+#display {
+	width: 20vw;
+	height: 10vh;
+	position: fixed;
+	top: 40vh;
+	left: 1vw;
+	
+}
