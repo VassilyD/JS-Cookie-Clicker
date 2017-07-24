@@ -1,9 +1,21 @@
 #clicker {
-	width: 50vw;
-	height: 50vh;
+	width: 70vh;
+	height: 70vh;
 	position: fixed;
 	top: 25vh;
-	left: 25vw;
+	left: calc((100vw - 70vh) /2);
+    border-radius: 50%;
+    background: #73AD21;
+}
+
+#critical {
+	width: 5vh;
+	height: 5vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    border-radius: 50%;
+    background: #f20707;
 }
 
 #display {
