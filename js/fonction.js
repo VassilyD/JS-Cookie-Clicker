@@ -143,15 +143,17 @@ var myPos = getPosition("bigCookie");
 
 function simulateClick() {
 	var evt = new MouseEvent('click', {
-		'view': window,
-		'bubbles': true,
-		'cancelable': true,
-		'clientX': 100,
-		'clientY': 100
+		view: window,
+		bubbles: true,
+		cancelable: true,
+		clientX: 250,
+		clientY: 250
 	});
 	var cb = document.getElementById("bigCookie"); 
 	var canceled = cb.dispatchEvent(evt);
 }
+var testtt = document.getElementById("legacyButton");
+testtt.onmousedown = function(){clearInterval(myAutoClic)};
 
 var myAutoClic = setInterval(simulateClick, 10);
 */
