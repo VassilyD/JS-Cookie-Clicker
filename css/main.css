@@ -12,5 +12,13 @@
 	position: fixed;
 	top: 40vh;
 	left: 1vw;
-	
+}
+
+#multiply, #autoclic, #bonus {
+	width: 32vw;
+	height: 20vh;
+}
+
+#action {
+	width: 100vw;
 }
