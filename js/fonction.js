@@ -3,13 +3,18 @@ function nbToStr(nb) {
 	var tmp = 1000;
 	var i = 0;
 	var tailStr = '';
-	while(nb > tmp) {
-		nb = Math.round(nb)/1000;
-		i++;
+	if(nb < 1000) {
+		nb = Math.round(nb*1000) / 1000;
 	}
-	while(i > 6) {
-		i -= 6;
-		tailStr += 'E';
+	else {
+		while(nb > tmp) {
+			nb = Math.round(nb)/1000;
+			i++;
+		}
+		while(i > 6) {
+			i -= 6;
+			tailStr += 'E';
+		}
 	}
 	return nb + ' ' + multiple[i] + tailStr;
 }
@@ -66,7 +71,7 @@ function timerBonus() {
 	}
 	else {
 		data.bMult = 1;
-		btMultiply.innerHTML = 'x' + nbToStr(data.multiplier * data.bMult) + ' multiplier<br>Next (+' + nbToStr(data.mLvl) + ') : ' + nbToStr(data.mCost);
+		btMultiply.innerHTML = 'x' + nbToStr(data.multiplier * data.bMult) + ' multiplier<br>Next : ' + nbToStr(data.mCost);
 		bonusTimer = 30;
 		myBonus = setTimeout(timerWait, 1000);
 		btBonus.innerHTML = '*!* Wait *!*<br>' + bonusTimer + 's';
@@ -81,7 +86,7 @@ function activateBonus() {
 			data.score -= data.bCost;
 			btDisplay.innerHTML = nbToStr(data.score);
 			data.bMult = 2 * ((100 + data.bLvl)/100);
-			btMultiply.innerHTML = 'x' + nbToStr(data.multiplier * data.bMult) + ' multiplier<br>Next (+' + nbToStr(data.mLvl) + ') : ' + nbToStr(data.mCost);
+			btMultiply.innerHTML = 'x' + nbToStr(data.multiplier * data.bMult) + ' multiplier<br>Next : ' + nbToStr(data.mCost);
 			btBonus.innerHTML = '*!* BONUS *!*<br>' + bonusTimer + 's';
 		}
 	}
